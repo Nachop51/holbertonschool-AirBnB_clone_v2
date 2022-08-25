@@ -24,7 +24,7 @@ def do_deploy(archive_path):
     o4 = run("rm /tmp/{}.tgz".format(filename))
     if o4.failed:
         return False
-    o5 = run("rm -fr /data/web_static/current")
+    o5 = run("rm -rf /data/web_static/current")
     if o5.failed:
         return False
     o6 = run("ln -s /data/web_static/releases/{}/ /data/web_static/current"
@@ -36,4 +36,5 @@ def do_deploy(archive_path):
              .format(filename, filename))
     if o7.failed:
         return False
+    print('New version deployed!')
     return True
