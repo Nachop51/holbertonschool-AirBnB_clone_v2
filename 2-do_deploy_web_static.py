@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """ Fabric script to deploy in a web server """
 from fabric.operations import run, put
 from fabric.api import env
