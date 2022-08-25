@@ -53,3 +53,11 @@ def do_deploy(archive_path):
         return False
     print('New version deployed!')
     return True
+
+
+def deploy():
+    """ do pack and do deploy together """
+    response = do_pack()
+    if not reponse:
+        return False
+    return do_deploy(filepath)
