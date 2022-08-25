@@ -1,9 +1,24 @@
 #!/usr/bin/python3
 """ Fabric script to deploy in a web server """
-from fabric.operations import run, put
+from fabric.operations import run, put, local
 from fabric.api import env
+from datetime import datetime as dt
 import os
 env.hosts = ['34.227.46.143', '18.234.112.14']
+
+
+""" Module that creates a folder and a tgz file """
+
+
+def do_pack():
+    """ Compress a directory into a tgz and creates a directory """
+    local("mkdir -p versions")
+    now = dt.now().strftime("%Y%m%d%H%M%S")
+    file_output = local(
+        "tar -vczf versions/web_static_{}.tgz web_static".format(now),
+        capture=True
+    )
+    return file_output if not file_output.failed else None
 
 
 def do_deploy(archive_path):
