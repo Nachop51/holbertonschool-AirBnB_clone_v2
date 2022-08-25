@@ -15,8 +15,8 @@ echo "<html>
     Holberton School
   </body>
 </html>" > /data/web_static/releases/test/index.html
-ln -sf /data/web_static/releases/test /data/web_static/current
-rm /data/web_static/current/test
+ln -sfn /data/web_static/releases/test /data/web_static/current
+rm /data/web_static/releases/test/test
 chown -R ubuntu:ubuntu /data
 sed -i "/server_name _/a location \/hbnb_static\/ {\n\talias \/data\/web_static\/current\/;\n}" /etc/nginx/sites-available/default
 service nginx restart
