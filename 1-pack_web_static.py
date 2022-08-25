@@ -3,6 +3,7 @@ from datetime import datetime as dt
 from fabric.operations import local
 """ Module that creates a folder and a tgz file """
 
+
 def do_pack():
     """ Compress a directory into a tgz and creates a directory """
     local("mkdir -p versions")
