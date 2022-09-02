@@ -1,0 +1,91 @@
+.filters {
+  position: relative;
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.filters button {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #ffffff;
+  height: 48px;
+  width: 20%;
+  background-color: #ff5a5f;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.filters button:hover {
+  opacity: 90%;
+}
+
+.filters div {
+  height: 100%;
+  width: 25%;
+  float: left;
+  position: relative;
+  text-align: left;
+}
+
+.filters div:first-child {
+  border-right: 1px solid #dddddd;
+}
+
+.filters div h3 {
+  position: relative;
+  left: 50px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.filters div h4 {
+  position: relative;
+  left: 50px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.popover {
+  opacity: 0;
+  visibility: hidden;
+  background-color: #fafafa;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  list-style: none;
+  padding: 30px 50px;
+  transition: all 0.4s ease-in-out;
+}
+
+.popover li p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.popover li h2 {
+  font-size: 16px;
+  margin-left: -22px;
+  margin-bottom: 0;
+}
+
+.popover li h2:first-child {
+  margin-top: 0;
+}
+
+.locations .popover li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.filters div:hover .popover {
+  opacity: 1;
+  visibility: visible;
+}
