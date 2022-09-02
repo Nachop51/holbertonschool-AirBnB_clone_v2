@@ -21,6 +21,6 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """ Getter method """
-            from city import City
+            from models.city import City
             return [obj for obj in models.storage.all(City).values() if
                     obj.state_id == self.id]
