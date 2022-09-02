@@ -57,7 +57,7 @@ class FileStorage:
         if obj is None:
             return
         else:
-            key = f"{type(obj).__name__}.{obj.id}"
+            key = "{}.{}".format(type(obj).__name__, obj.id)
             if key in self.all():
                 del self.all()[key]
                 self.save()
