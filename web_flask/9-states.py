@@ -18,7 +18,11 @@ def states_id(id):
     """ Render a particular state """
     states = storage.all("State")
     if id is None:
-        return render_template('9-states.html', states=states.values(), len=len(states))
+        return render_template(
+            '9-states.html',
+            states=states.values(),
+            len=len(states)
+        )
     key = "State.{}".format(id)
     states = states[key] if key in states.keys() else None
     return render_template('9-states.html', states=states, len=1)

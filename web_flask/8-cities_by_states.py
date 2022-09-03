@@ -15,7 +15,10 @@ def teardown_db(exception):
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states():
     """ Renders all states and cities """
-    return render_template('8-cities_by_states.html', states=storage.all("State").values())
+    return render_template(
+        '8-cities_by_states.html',
+        states=storage.all("State").values()
+    )
 
 
 if __name__ == '__main__':
