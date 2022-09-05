@@ -64,6 +64,12 @@
   list-style: none;
   padding: 30px 50px;
   transition: all 0.4s ease-in-out;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.popover::-webkit-scrollbar {
+  display: none;
 }
 
 .popover li p {
